@@ -89,3 +89,97 @@ l = [10, 20, 30, 40]
 l.insert(100, 7777)
 l.insert(-100, 9999)
 print(l) # Output : [9999, 10, 20, 30, 40, 7777]
+
+
+# 3. extend() : To add all elements of given sequence to the list
+
+# Syntax : 
+# l1.extend(l2)
+
+# all elements present inside l2 will be added to the end of l1
+
+
+order1 = ['Chicken', 'Mutton', 'Fish']
+order2 = ['KF', 'KO', 'RC']
+
+order1.extend(order2)
+print(order1) # Output : ['Chicken', 'Mutton', 'Fish', 'KF', 'KO', 'RC']
+
+
+# -----------------------------------------------------------
+
+# Difference between append() and extend() : 
+
+l1 = [10, 20, 30]
+l2 = [40, 50]
+
+# append() : adds the entire list as a single element to the end of the list
+# l1.append(l2)
+# print(l1) # Output : [10, 20, 30, [40, 50]]
+# print(len(l1)) # Output : 4
+
+# l1.append('ABC')
+# print(l1) # Output : [10, 20, 30, 'ABC']
+# print(len(l1)) # Output : 4
+
+# extend() : adds all elements of the list to the end of the list
+# l1.extend(l2)
+# print(l1) # Output : [10, 20, 30, 40, 50]
+# print(len(l1)) # Output : 5
+
+
+l1.extend('ABC')
+print(l1) # Output : [10, 20, 30, 'A', 'B', 'C']
+print(len(l1)) # Output : 6
+
+
+print("-----------------------------------------------------------")
+print("-----------------------------------------------------------")
+# -----------------------------------------------------------
+# Removing elements from List:
+# -----------------------------------------------------------
+
+# 1. remove() : 
+# => removes the first occurance of the specified element from the list
+# => if the specified element is not present in the list, it raises a ValueError
+
+l = [10, 20, 10, 20, 40]
+l.remove(10)
+print(l) # Output : [20, 10, 20, 40]
+#  removed the first occurance of 10 from the list
+
+# l.remove(50)
+# print(l) # Output : ValueError: list.remove(x): x not in list
+
+print("-----------------------------------------------------------")
+print("--------------------- SMALL EXERCISE ----------------------")
+print("-----------------------------------------------------------")
+
+# l = [1, 2, 3, 4, 5]
+# print('Before Removal:', l)
+# x = int(input('Enter element to remove: '))
+# if x in l:
+#     l.remove(x)
+#     print('After Removal:', l)
+# else:
+#     print(x, 'not present in list')
+
+
+
+print("-----------------------------------------------------------")
+print("-----------------------------------------------------------")
+
+# HOW TO REMOVE ALL OCCURANCES OF SPECIFIED ELEMENT FROM THE LIST
+
+# => Ready-made methods not available, have to write code
+
+l = [1, 1, 1, 1, 2, 2, 2, 3, 3]
+print('Before Removal:', l)
+x = int(input('Enter element to remove: '))
+
+while True:
+    if x in l:
+        l.remove(x)
+    else:
+        break
+print('After Removal:', l)
