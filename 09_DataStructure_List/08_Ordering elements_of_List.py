@@ -142,3 +142,136 @@ for x in r:
 
 ==========================================================================================================
 """
+
+# ==============================================================
+# SORTING ELEMENTS OF LIST
+# ==============================================================
+# Sorting means arranging elements in a specific order.
+# There are two ways to sort a list in Python:
+#
+# 1. sort()   -> Modifies the original list.
+# 2. sorted() -> Creates and returns a new sorted list.
+
+# ---------------------------------------------------------------------------------------
+# 1. sort() : 
+# ---------------------------------------------------------------------------------------
+# Syntax: list_name.sort()
+
+# Purpose: Sorts the elements of the list in-place (changes the original list).
+#
+# Default Behavior:
+#     Numbers -> Ascending order (Small → Large)
+#     Strings -> Alphabetical order (A → Z)
+
+l = [20, 5, 15, 0, 10]
+print("Before Sorting",l) # Output : [0, 5, 10, 15, 20]
+l.sort() 
+print("After Sorting",l) # Output :[0, 5, 10, 15, 20]
+
+l = ['Banana', 'Cat', 'Apple']
+print("Before Sorting",l) # Output : ['Banana', 'Cat', 'Apple']
+l.sort() 
+print("After Sorting",l) # Output : ['Apple', 'Banana', 'Cat']
+
+
+# =====================================
+# Sorting in Descending Order
+# =====================================
+# When you want to sort in descending order, you can use the reverse paraneter of the sort() method.
+
+# Use:
+#     list_name.sort(reverse=True)
+
+# reverse=True means:
+#     Numbers -> Largest → Smallest
+#     Strings -> Reverse alphabetical order (Z → A)
+
+l = [20, 5, 15, 0, 10]
+print("Before Sorting",l) # Output : [20, 5, 15, 0, 10]
+l.sort(reverse=True) 
+print("After Sorting",l) # Output : [20, 15, 10, 5, 0]
+
+
+l = ['Mango', 'Apple', 'Banana']
+print("Before Sorting",l) # Output : ['Mango', 'Apple', 'Banana']
+l.sort(reverse=True) 
+print("After Sorting",l) # Output : ['Mango', 'Banana', 'Apple']
+
+
+# ---------------------------------------------------------------------------------------
+# Note :
+# i. sort() method modifies the original list in-place and returns None.
+# ii. If you want to use sort() method, all the list elements should be of same type only.
+# iii. sort() is list specific method, it will not work for any other data structure.
+
+# l = [40, 20, 'B', 'A']
+# print("Before Sorting",l) # Output : [40, 20, 'B', 'A']
+# l.sort() 
+# print("After Sorting",l) # Output : TypeError: '<' not supported between instances of 'str' and 'int'
+# ---------------------------------------------------------------------------------------
+
+
+
+# ---------------------------------------------------------------------------------------
+# 2. sorted() Function :
+
+# i. sorted() function returns a new sorted list and does not modify the  original list.
+# ii. sorted() is a built-in function, it can be used with any iterable.
+
+l1 = [20, 5, 15, 0, 10]
+l2 = sorted(l1)
+print("l1=>", l1) # Output : [20, 5, 15, 0, 10]
+print("l2=>", l2) # Output : [0, 5, 10, 15, 20]
+# ---------------------------------------------------------------------------------------
+
+# ===============================================================================
+# Descending Order with sorted()
+# ===============================================================================
+# Syntax:
+#     sorted(iterable, reverse=True)
+#
+# Example:
+#     sorted(l1, reverse=True)
+
+l1 = [20, 5, 15, 0, 10]
+l2 = sorted(l1, reverse=True)
+print("l1=>", l1) # Output : [20, 5, 15, 0, 10]
+print("l2=>", l2) # Output : [20, 15, 10, 5, 0]
+# -------------------------------------------------------------------------------
+
+
+# ===============================================================================
+# Important Notes about sorted()
+# ===============================================================================
+# 1. Returns a NEW sorted list.
+#
+# 2. Original data remains unchanged.
+#
+# 3. Works with ANY iterable:
+#      ✔ List
+#      ✔ Tuple
+#      ✔ String
+#      ✔ Set
+#      ✔ Dictionary (sorts keys by default)
+#
+# 4. Since it returns a new list, you can store it in a variable.
+# -------------------------------------------------------------------------------
+
+# ===============================================================================
+# sort() vs sorted()
+# ===============================================================================
+#
+# sort()
+# ------
+# ✔ List method
+# ✔ Changes original list
+# ✔ Returns None
+# ✔ Slightly faster (no new list created)
+#
+# sorted()
+# --------
+# ✔ Built-in function
+# ✔ Keeps original data unchanged
+# ✔ Returns a new sorted list
+# ✔ Works with any iterable
+# -------------------------------------------------------------------------------
